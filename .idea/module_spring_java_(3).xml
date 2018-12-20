@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_spring_java_(3)" default="compile.module.spring_java_(3)">
+  <dirname property="module.spring_java_(3).basedir" file="${ant.file.module_spring_java_(3)}"/>
+  
+  <property name="module.jdk.home.spring_java_(3)" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.spring_java_(3)" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.spring_java_(3)" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.spring_java_(3)" value="-encoding UTF-8 -source 10 -target 10 ${compiler.args}"/>
+  
+  <property name="spring_java_(3).output.dir" value="undefined"/>
+  <property name="spring_java_(3).testoutput.dir" value="undefined"/>
+  
+  <path id="spring_java_(3).module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="spring_java_(3).module.production.classpath">
+    <path refid="${module.jdk.classpath.spring_java_(3)}"/>
+  </path>
+  
+  <path id="spring_java_(3).runtime.production.module.classpath"/>
+  
+  <path id="spring_java_(3).module.classpath">
+    <path refid="${module.jdk.classpath.spring_java_(3)}"/>
+  </path>
+  
+  <path id="spring_java_(3).runtime.module.classpath"/>
+  
+  
+  <patternset id="excluded.from.module.spring_java_(3)">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.spring_java_(3)">
+    <patternset refid="excluded.from.module.spring_java_(3)"/>
+  </patternset>
+  
+  
+  <target name="compile.module.spring_java_(3)" depends="compile.module.spring_java_(3).production,compile.module.spring_java_(3).tests" description="Compile module spring_java (3)"/>
+  
+  <target name="compile.module.spring_java_(3).production" depends="register.custom.compilers" description="Compile module spring_java (3); production classes"/>
+  
+  <target name="compile.module.spring_java_(3).tests" depends="register.custom.compilers,compile.module.spring_java_(3).production" description="compile module spring_java (3); test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.spring_java_(3)" description="cleanup module">
+    <delete dir="${spring_java_(3).output.dir}"/>
+    <delete dir="${spring_java_(3).testoutput.dir}"/>
+  </target>
+</project>
